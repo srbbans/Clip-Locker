@@ -36,10 +36,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:letterSpacing=".1"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:text="Id - "
-                    android:textColor="@color/dark"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
@@ -49,23 +49,23 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:letterSpacing=".1"
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
-                    android:text="@{`#`+clip._id}"
-                    android:textColor="@color/dark"
+                    android:text="@{`#`+clip._id, default=ID}"
                     android:textStyle="bold" />
 
             </TableRow>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvText"
-                android:layout_width="wrap_content"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:paddingStart="3dp"
-                android:paddingEnd="3dp"
-                android:text="@{clip.message}"
-                android:textColor="@color/dark"
+                android:letterSpacing=".03"
+                android:padding="10dp"
+                android:text="@{clip.message , default=Message}"
                 android:textStyle="bold" />
 
 
@@ -84,8 +84,7 @@
                     android:gravity="end|bottom"
                     android:padding="3dp"
                     android:singleLine="false"
-                    android:text="@{clip.dateTime}"
-                    android:textColor="#6A6A6A"
+                    android:text="@{clip.dateTime , default=time}"
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView

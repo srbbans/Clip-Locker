@@ -1,6 +1,5 @@
 package bans.cliplocker.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -27,7 +26,7 @@ class ClipsAdapter(private var mDataset: ArrayList<Clip>, private val callback: 
             }
             binding.delete.setOnClickListener {
                 callback.onNoteDelete(
-                    mDataset[bindingAdapterPosition]
+                    mDataset[bindingAdapterPosition], bindingAdapterPosition
                 )
             }
             binding.copy.setOnClickListener {
@@ -64,15 +63,9 @@ class ClipsAdapter(private var mDataset: ArrayList<Clip>, private val callback: 
         return mDataset.size
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun refresh_list(dataset: ArrayList<Clip>) {
-        mDataset = dataset
-        notifyDataSetChanged()
-    }
-
     interface Callback {
         fun onNoteClick(note: Clip)
-        fun onNoteDelete(note: Clip)
+        fun onNoteDelete(note: Clip, position: Int)
         fun onNoteCopy(note: Clip)
     }
 }

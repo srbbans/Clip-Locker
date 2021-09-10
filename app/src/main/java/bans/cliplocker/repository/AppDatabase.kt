@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import bans.cliplocker.model.Clip
 
 
-@Database(entities = [Clip::class], version = 1)
+@Database(entities = [Clip::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun clipDao(): ClipDao

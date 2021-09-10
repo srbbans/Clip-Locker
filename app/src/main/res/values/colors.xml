@@ -5,7 +5,7 @@
 
     <color name="activity_background_light">#FFFFFF</color>
 
-    <color name="activity_background">#383C3B</color>
+    <color name="activity_background">#2E3440</color>
 
     <!--<color name="my_primary">#00B88A</color>
     <color name="my_primary_dark">#286253</color>
@@ -14,8 +14,8 @@
     <color name="my_icons">#FFFFFF</color>
     <color name="my_divider">#B6B6B6</color> -->
 
-    <color name="light_primary">#2E2E2E</color>
-    <color name="light_primary_dark">#222222</color>
+    <color name="light_primary">#5E81AC</color>
+    <color name="light_primary_dark">#3F5978</color>
     <color name="light_primary_light">#343733</color>
     <color name="light_accent">#A682E6</color>
     <color name="light_secondary_text">#9E9E9E</color>
@@ -27,9 +27,9 @@
     <color name="my_accent">#A682E6</color>
     <color name="secondary_text">#9E9E9E</color>
 
-    <color name="header_shape_color">#2261aa</color>
+    <color name="header_shape_color">#5E81AC</color>
 
-    <color name="text_header">#2261aa</color>
+    <color name="text_header">#5E81AC</color>
 
     <color name="my_primary_darkest">#9B3E37</color>
 

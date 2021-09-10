@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var dataset: ArrayList<Clip>
     lateinit var context: Context
+    lateinit var adapter: ClipsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,28 +49,32 @@ class MainActivity : AppCompatActivity() {
             val dao = db.clipDao()
             dataset = ArrayList(dao.getAll())
             withContext(Dispatchers.Main) {
-                binding.recyclerView.adapter =
-                    ClipsAdapter(dataset, object : ClipsAdapter.Callback {
-                        override fun onNoteClick(note: Clip) {
+                adapter = ClipsAdapter(dataset, object : ClipsAdapter.Callback {
+                    override fun onNoteClick(note: Clip) {
 
-                        }
+                    }
 
-                        override fun onNoteDelete(note: Clip) {
-                            lifecycleScope.launch(Dispatchers.IO) {
-                                dao.deleteClip(note)
+                    override fun onNoteDelete(note: Clip, position: Int) {
+                        lifecycleScope.launch(Dispatchers.IO) {
+                            dao.deleteClip(note)
+                            withContext(Dispatchers.Main) {
+                                adapter.deleteItem(position)
                             }
                         }
+                    }
 
-                        override fun onNoteCopy(note: Clip) {
-                            val clipboard: ClipboardManager =
-                                context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                            val clip = ClipData.newPlainText("Clip Locker", note.message)
+                    override fun onNoteCopy(note: Clip) {
+                        val clipboard: ClipboardManager =
+                            context.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                        val clip = ClipData.newPlainText("Clip Locker", note.message)
 
-                            clipboard.setPrimaryClip(clip)
-                            Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-                    })
+                        clipboard.setPrimaryClip(clip)
+                        Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                })
+                binding.recyclerView.adapter = adapter
+
             }
         }
     }
