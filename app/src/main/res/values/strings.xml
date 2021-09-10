@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClipLocker</string>
+
+    <string name="store_label">Store to Locker</string>
+</resources>
