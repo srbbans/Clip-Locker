@@ -29,3 +29,9 @@ jobs:
       run: ./gradlew assembleRelease
     - name: list files
       run: ls -lrt app/build/outputs/apk/release
+
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+       name: Build Artifacts
+       path: app/build/outputs/
