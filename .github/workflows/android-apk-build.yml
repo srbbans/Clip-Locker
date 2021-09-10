@@ -1,9 +1,9 @@
 name: Android CI
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
   pull_request:
-    branches: [ develop ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -16,9 +16,12 @@ jobs:
       with:
         java-version: 1.8
         
-    - name: Install NDK
-      run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;20.0.5594570" --sdk_root=${ANDROID_SDK_ROOT}
+    #- name: Install NDK
+    #  run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;20.0.5594570" --sdk_root=${ANDROID_SDK_ROOT}
       
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
 
