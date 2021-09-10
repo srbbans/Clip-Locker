@@ -9,6 +9,7 @@ This Project implements.
 
 - Written in Kotlin.
 - CI/CD using Github Actions.
+- Authentication/Login using fingerPrint / Pin.
 - Room Database for back-end.
 - Coroutines for Asynchronization.
 - Data/View Binding.
