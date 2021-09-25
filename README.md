@@ -2,6 +2,8 @@
 
 Clipboard data store android app.
 
+ci/cd example
+
 **Purpose/Motive:-** Don't worry about the clipboard overwrite.. just tap on "store to locker" in the global copy options menu.
 No internet permission, no data risks.
 
