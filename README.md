@@ -2,6 +2,8 @@
 
 Clipboard data store android app.
 
+Google Play Store: https://play.google.com/store/apps/details?id=bans.cliplocker
+
 ci/cd example
 
 **Purpose/Motive:-** Don't worry about the clipboard overwrite.. just tap on "store to locker" in the global copy options menu.
