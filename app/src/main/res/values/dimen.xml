@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="emoji_size">300dp</dimen>
+
+    <dimen name="emoji_eye_ball">50dp</dimen>
+
+    <dimen name="emoji_eye_padding_from_both_ends">50dp</dimen>
+
+</resources>

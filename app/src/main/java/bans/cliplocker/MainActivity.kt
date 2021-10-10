@@ -16,10 +16,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var dataset: ArrayList<Clip>
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var dataset: ArrayList<Clip>
     lateinit var context: Context
     lateinit var adapter: ClipsAdapter
 
@@ -39,6 +40,12 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         binding.recyclerView.setHasFixedSize(true)
 
+        val sharedP = getSharedPreferences("settings", MODE_PRIVATE)
+        binding.switchAuth.isChecked = sharedP.getBoolean("auth", false)
+
+        binding.switchAuth.setOnCheckedChangeListener { _, isChecked ->
+            sharedP.edit().putBoolean("auth", isChecked).apply()
+        }
 
     }
 

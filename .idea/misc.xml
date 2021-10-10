@@ -5,12 +5,18 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25435897435897437" />
         <entry key="app/src/main/res/drawable/card_outlines_light_corners.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/res/drawable/emoji_face_shape.xml" value="0.25833333333333336" />
+        <entry key="app/src/main/res/drawable/eye_ball_shape.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/header_shaped.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.25435897435897437" />
+        <entry key="app/src/main/res/drawable/round_android_grey_700_24dp.xml" value="0.2234375" />
+        <entry key="app/src/main/res/drawable/round_android_grey_800_48dp.xml" value="0.2234375" />
+        <entry key="app/src/main/res/drawable/round_circle_notifications_grey_500_24dp.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.2421875" />
         <entry key="app/src/main/res/layout/activity_clip_listener.xml" value="0.2421875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2421875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="app/src/main/res/layout/card_clip.xml" value="0.2421875" />
+        <entry key="app/src/main/res/layout/emoji.xml" value="0.2421875" />
       </map>
     </option>
   </component>
